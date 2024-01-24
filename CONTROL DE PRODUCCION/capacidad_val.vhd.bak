@@ -1,0 +1,14 @@
+-- VALIDACION CAPACIDAD
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+-- ENTIDAD
+entity capacidad_val is
+	port(tproduc: in integer range 0 to 127;
+			capacidad: out integer range 0 to 255);
+end capacidad_val;
+-- ARQUITECTURA
+architecture funcion of capacidad_val is
+begin
+	vpwm <= tproduc*255/62;
+end funcion;

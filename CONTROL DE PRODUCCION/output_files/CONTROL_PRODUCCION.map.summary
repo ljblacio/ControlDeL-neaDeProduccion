@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Tue Jan 23 14:42:36 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : CONTROL_PRODUCCION
+Top-level Entity Name : CONTROL_PRODUCCION_SIMULAR
+Family : MAX 10
+Total logic elements : 6,699
+    Total combinational functions : 4,630
+    Dedicated logic registers : 2,635
+Total registers : 2635
+Total pins : 42
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

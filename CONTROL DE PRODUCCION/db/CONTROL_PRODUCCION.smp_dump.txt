@@ -1,0 +1,16 @@
+
+State Machine - |CONTROL_PRODUCCION_SIMULAR|controlador:inst63|y
+Name y.TM y.TL y.TK y.TJ y.TI y.TH y.TG y.TF y.TE y.TD y.TC y.TB y.TA 
+y.TA 0 0 0 0 0 0 0 0 0 0 0 0 0 
+y.TB 0 0 0 0 0 0 0 0 0 0 0 1 1 
+y.TC 0 0 0 0 0 0 0 0 0 0 1 0 1 
+y.TD 0 0 0 0 0 0 0 0 0 1 0 0 1 
+y.TE 0 0 0 0 0 0 0 0 1 0 0 0 1 
+y.TF 0 0 0 0 0 0 0 1 0 0 0 0 1 
+y.TG 0 0 0 0 0 0 1 0 0 0 0 0 1 
+y.TH 0 0 0 0 0 1 0 0 0 0 0 0 1 
+y.TI 0 0 0 0 1 0 0 0 0 0 0 0 1 
+y.TJ 0 0 0 1 0 0 0 0 0 0 0 0 1 
+y.TK 0 0 1 0 0 0 0 0 0 0 0 0 1 
+y.TL 0 1 0 0 0 0 0 0 0 0 0 0 1 
+y.TM 1 0 0 0 0 0 0 0 0 0 0 0 1 

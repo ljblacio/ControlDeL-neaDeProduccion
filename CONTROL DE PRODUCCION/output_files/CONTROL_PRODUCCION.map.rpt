@@ -1,0 +1,599 @@
+Analysis & Synthesis report for CONTROL_PRODUCCION
+Tue Jan 23 14:42:37 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |CONTROL_PRODUCCION_SIMULAR|controlador:inst63|y
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: selector_2a1:inst39
+ 13. Parameter Settings for User Entity Instance: separador_3dig:inst27
+ 14. Parameter Settings for User Entity Instance: separador_3dig:inst28
+ 15. Parameter Settings for User Entity Instance: div_frec:inst3
+ 16. Parameter Settings for User Entity Instance: selector_2a1:inst31
+ 17. Parameter Settings for User Entity Instance: separador_3dig:inst56
+ 18. Parameter Settings for User Entity Instance: separador_3dig:inst61
+ 19. Parameter Settings for User Entity Instance: selector_2a1:inst60
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jan 23 14:42:36 2024          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                      ; CONTROL_PRODUCCION                             ;
+; Top-level Entity Name              ; CONTROL_PRODUCCION_SIMULAR                     ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 6,699                                          ;
+;     Total combinational functions  ; 4,630                                          ;
+;     Dedicated logic registers      ; 2,635                                          ;
+; Total registers                    ; 2635                                           ;
+; Total pins                         ; 42                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                      ;
++------------------------------------------------------------------+----------------------------+--------------------+
+; Option                                                           ; Setting                    ; Default Value      ;
++------------------------------------------------------------------+----------------------------+--------------------+
+; Device                                                           ; 10M08DAF484C8G             ;                    ;
+; Top-level entity name                                            ; CONTROL_PRODUCCION_SIMULAR ; CONTROL_PRODUCCION ;
+; Family name                                                      ; MAX 10                     ; Cyclone V          ;
+; Use smart compilation                                            ; Off                        ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                         ; On                 ;
+; Enable compact report table                                      ; Off                        ; Off                ;
+; Restructure Multiplexers                                         ; Auto                       ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                        ; Off                ;
+; Preserve fewer node names                                        ; On                         ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable                     ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001               ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993                  ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto                       ; Auto               ;
+; Safe State Machine                                               ; Off                        ; Off                ;
+; Extract Verilog State Machines                                   ; On                         ; On                 ;
+; Extract VHDL State Machines                                      ; On                         ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                        ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000                       ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                        ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                         ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                         ; On                 ;
+; Parallel Synthesis                                               ; On                         ; On                 ;
+; DSP Block Balancing                                              ; Auto                       ; Auto               ;
+; NOT Gate Push-Back                                               ; On                         ; On                 ;
+; Power-Up Don't Care                                              ; On                         ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                        ; Off                ;
+; Remove Duplicate Registers                                       ; On                         ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                        ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                        ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                        ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                        ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                        ; Off                ;
+; Ignore SOFT Buffers                                              ; On                         ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                        ; Off                ;
+; Optimization Technique                                           ; Balanced                   ; Balanced           ;
+; Carry Chain Length                                               ; 70                         ; 70                 ;
+; Auto Carry Chains                                                ; On                         ; On                 ;
+; Auto Open-Drain Pins                                             ; On                         ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                        ; Off                ;
+; Auto ROM Replacement                                             ; On                         ; On                 ;
+; Auto RAM Replacement                                             ; On                         ; On                 ;
+; Auto DSP Block Replacement                                       ; On                         ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto                       ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                       ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                         ; On                 ;
+; Strict RAM Replacement                                           ; Off                        ; Off                ;
+; Allow Synchronous Control Signals                                ; On                         ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                        ; Off                ;
+; Auto RAM Block Balancing                                         ; On                         ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                        ; Off                ;
+; Auto Resource Sharing                                            ; Off                        ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                        ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                        ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                        ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                         ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                        ; Off                ;
+; Timing-Driven Synthesis                                          ; On                         ; On                 ;
+; Report Parameter Settings                                        ; On                         ; On                 ;
+; Report Source Assignments                                        ; On                         ; On                 ;
+; Report Connectivity Checks                                       ; On                         ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                        ; Off                ;
+; Synchronization Register Chain Length                            ; 2                          ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation         ; Normal compilation ;
+; HDL message level                                                ; Level2                     ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                        ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                       ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                       ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                        ; 100                ;
+; Clock MUX Protection                                             ; On                         ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                        ; Off                ;
+; Block Design Naming                                              ; Auto                       ; Auto               ;
+; SDC constraint protection                                        ; Off                        ; Off                ;
+; Synthesis Effort                                                 ; Auto                       ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                         ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                        ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium                     ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto                       ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                         ; On                 ;
++------------------------------------------------------------------+----------------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.4%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; deco_7seg.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/deco_7seg.vhd                  ;         ;
+; div_frec.vhd                     ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/div_frec.vhd                   ;         ;
+; digitos.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/digitos.vhd                    ;         ;
+; decoder_teclado_ln.vhd           ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/decoder_teclado_ln.vhd         ;         ;
+; conta_pot2.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/conta_pot2.vhd                 ;         ;
+; pwm.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/pwm.vhd                        ;         ;
+; CONTROL_PRODUCCION_SIMULAR.bdf   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/CONTROL_PRODUCCION_SIMULAR.bdf ;         ;
+; valor_pwm.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/valor_pwm.vhd                  ;         ;
+; capacidad_val.vhd                ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/capacidad_val.vhd              ;         ;
+; cont_9b.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_9b.vhd                    ;         ;
+; rsost_9b.vhd                     ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/rsost_9b.vhd                   ;         ;
+; cont_productos.vhd               ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_productos.vhd             ;         ;
+; multiplex.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/multiplex.vhd                  ;         ;
+; frec_var.vhd                     ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/frec_var.vhd                   ;         ;
+; compara_prod.vhd                 ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/compara_prod.vhd               ;         ;
+; ram512x5.vhd                     ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/ram512x5.vhd                   ;         ;
+; cont_dias.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_dias.vhd                  ;         ;
+; cont_updw.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_updw.vhd                  ;         ;
+; separador_3dig.vhd               ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/separador_3dig.vhd             ;         ;
+; selector_2a1.vhd                 ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/selector_2a1.vhd               ;         ;
+; compara.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/compara.vhd                    ;         ;
+; controlador.vhd                  ; yes             ; User VHDL File                     ; C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/controlador.vhd                ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 6,699                   ;
+;                                             ;                         ;
+; Total combinational functions               ; 4630                    ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 4015                    ;
+;     -- 3 input functions                    ; 52                      ;
+;     -- <=2 input functions                  ; 563                     ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 4577                    ;
+;     -- arithmetic mode                      ; 53                      ;
+;                                             ;                         ;
+; Total registers                             ; 2635                    ;
+;     -- Dedicated logic registers            ; 2635                    ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 42                      ;
+;                                             ;                         ;
+; Embedded Multiplier 9-bit elements          ; 0                       ;
+;                                             ;                         ;
+; Maximum fan-out node                        ; controlador:inst63|y.TF ;
+; Maximum fan-out                             ; 2561                    ;
+; Total fan-out                               ; 24920                   ;
+; Average fan-out                             ; 3.39                    ;
++---------------------------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                               ; Entity Name                ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------+----------------------------+--------------+
+; |CONTROL_PRODUCCION_SIMULAR ; 4630 (7)            ; 2635 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 42   ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR                       ; CONTROL_PRODUCCION_SIMULAR ; work         ;
+;    |capacidad_val:inst62|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|capacidad_val:inst62  ; capacidad_val              ; work         ;
+;    |compara:inst22|         ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|compara:inst22        ; compara                    ; work         ;
+;    |cont_9b:inst10|         ; 11 (11)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|cont_9b:inst10        ; cont_9b                    ; work         ;
+;    |cont_dias:inst37|       ; 6 (6)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|cont_dias:inst37      ; cont_dias                  ; work         ;
+;    |cont_productos:inst14|  ; 26 (26)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|cont_productos:inst14 ; cont_productos             ; work         ;
+;    |cont_updw:inst40|       ; 9 (9)               ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|cont_updw:inst40      ; cont_updw                  ; work         ;
+;    |conta_pot2:inst42|      ; 2 (2)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|conta_pot2:inst42     ; conta_pot2                 ; work         ;
+;    |controlador:inst63|     ; 16 (16)             ; 13 (13)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|controlador:inst63    ; controlador                ; work         ;
+;    |digitos:inst|           ; 12 (12)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|digitos:inst          ; digitos                    ; work         ;
+;    |frec_var:inst25|        ; 63 (63)             ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|frec_var:inst25       ; frec_var                   ; work         ;
+;    |ram512x5:inst38|        ; 4463 (4463)         ; 2560 (2560)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|ram512x5:inst38       ; ram512x5                   ; work         ;
+;    |rsost_9b:inst12|        ; 1 (1)               ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|rsost_9b:inst12       ; rsost_9b                   ; work         ;
+;    |selector_2a1:inst39|    ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CONTROL_PRODUCCION_SIMULAR|selector_2a1:inst39   ; selector_2a1               ; work         ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |CONTROL_PRODUCCION_SIMULAR|controlador:inst63|y                                ;
++------+------+------+------+------+------+------+------+------+------+------+------+------+------+
+; Name ; y.TM ; y.TL ; y.TK ; y.TJ ; y.TI ; y.TH ; y.TG ; y.TF ; y.TE ; y.TD ; y.TC ; y.TB ; y.TA ;
++------+------+------+------+------+------+------+------+------+------+------+------+------+------+
+; y.TA ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ;
+; y.TB ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 1    ;
+; y.TC ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 1    ;
+; y.TD ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 1    ;
+; y.TE ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 1    ;
+; y.TF ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; y.TG ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; y.TH ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; y.TI ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; y.TJ ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; y.TK ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; y.TL ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; y.TM ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
++------+------+------+------+------+------+------+------+------+------+------+------+------+------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2635  ;
+; Number of registers using Synchronous Clear  ; 7     ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 151   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2582  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; cont_9b:inst10|conta[0]                ; 2       ;
+; cont_productos:inst14|conta[0]         ; 5       ;
+; conta_pot2:inst42|x[0]                 ; 9       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |CONTROL_PRODUCCION_SIMULAR|frec_var:inst25|n[4] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CONTROL_PRODUCCION_SIMULAR|frec_var:inst25|n[2] ;
+; 512:1              ; 5 bits    ; 1705 LEs      ; 1705 LEs             ; 0 LEs                  ; No         ; |CONTROL_PRODUCCION_SIMULAR|ram512x5:inst38|Mux1 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: selector_2a1:inst39 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 9     ; Unsigned Integer                        ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: separador_3dig:inst27 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; n              ; 9     ; Unsigned Integer                          ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: separador_3dig:inst28 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; n              ; 7     ; Unsigned Integer                          ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_frec:inst3 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; n              ; 4     ; Unsigned Integer                   ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: selector_2a1:inst31 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 7     ; Unsigned Integer                        ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: separador_3dig:inst56 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; n              ; 9     ; Unsigned Integer                          ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: separador_3dig:inst61 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; n              ; 5     ; Unsigned Integer                          ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: selector_2a1:inst60 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 7     ; Unsigned Integer                        ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 42                          ;
+; cycloneiii_ff         ; 2635                        ;
+;     CLR               ; 33                          ;
+;     CLR SCLR          ; 7                           ;
+;     CLR SLD           ; 9                           ;
+;     ENA               ; 2480                        ;
+;     ENA CLR           ; 102                         ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 4631                        ;
+;     arith             ; 53                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 21                          ;
+;         3 data inputs ; 31                          ;
+;     normal            ; 4578                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 521                         ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 4015                        ;
+;                       ;                             ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 8.37                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:11     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Tue Jan 23 14:42:05 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CONTROL_PRODUCCION -c CONTROL_PRODUCCION
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file clock_div.vhd
+    Info (12022): Found design unit 1: CLOCK_DIV-a File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/clock_div.vhd Line: 25
+    Info (12023): Found entity 1: CLOCK_DIV File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/clock_div.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file antirebote.vhd
+    Info (12022): Found design unit 1: ANTIREBOTE-a File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/antirebote.vhd Line: 12
+    Info (12023): Found entity 1: ANTIREBOTE File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/antirebote.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file deco_7seg.vhd
+    Info (12022): Found design unit 1: deco_7seg-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/deco_7seg.vhd Line: 9
+    Info (12023): Found entity 1: deco_7seg File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/deco_7seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file div_frec.vhd
+    Info (12022): Found design unit 1: div_frec-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/div_frec.vhd Line: 9
+    Info (12023): Found entity 1: div_frec File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/div_frec.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file digitos.vhd
+    Info (12022): Found design unit 1: digitos-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/digitos.vhd Line: 13
+    Info (12023): Found entity 1: digitos File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/digitos.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file decoder_teclado_ln.vhd
+    Info (12022): Found design unit 1: decoder_teclado_ln-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/decoder_teclado_ln.vhd Line: 12
+    Info (12023): Found entity 1: decoder_teclado_ln File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/decoder_teclado_ln.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file conta_pot2.vhd
+    Info (12022): Found design unit 1: conta_pot2-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/conta_pot2.vhd Line: 11
+    Info (12023): Found entity 1: conta_pot2 File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/conta_pot2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file cont_ram.vhd
+    Info (12022): Found design unit 1: cont_ram-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_ram.vhd Line: 12
+    Info (12023): Found entity 1: cont_ram File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_ram.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pwm.vhd
+    Info (12022): Found design unit 1: pwm-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/pwm.vhd Line: 12
+    Info (12023): Found entity 1: pwm File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/pwm.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file control_produccion_simular.bdf
+    Info (12023): Found entity 1: CONTROL_PRODUCCION_SIMULAR
+Info (12021): Found 2 design units, including 1 entities, in source file valor_pwm.vhd
+    Info (12022): Found design unit 1: valor_pwm-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/valor_pwm.vhd Line: 11
+    Info (12023): Found entity 1: valor_pwm File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/valor_pwm.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file capacidad_val.vhd
+    Info (12022): Found design unit 1: capacidad_val-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/capacidad_val.vhd Line: 11
+    Info (12023): Found entity 1: capacidad_val File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/capacidad_val.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file cont_9b.vhd
+    Info (12022): Found design unit 1: cont_9b-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_9b.vhd Line: 11
+    Info (12023): Found entity 1: cont_9b File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_9b.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file rsost_9b.vhd
+    Info (12022): Found design unit 1: rsost_9b-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/rsost_9b.vhd Line: 11
+    Info (12023): Found entity 1: rsost_9b File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/rsost_9b.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file cont_productos.vhd
+    Info (12022): Found design unit 1: cont_productos-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_productos.vhd Line: 13
+    Info (12023): Found entity 1: cont_productos File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_productos.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file separa_3dig.vhd
+    Info (12022): Found design unit 1: separa_3dig-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/separa_3dig.vhd Line: 11
+    Info (12023): Found entity 1: separa_3dig File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/separa_3dig.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file multiplex.vhd
+    Info (12022): Found design unit 1: multiplex-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/multiplex.vhd Line: 9
+    Info (12023): Found entity 1: multiplex File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/multiplex.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file frec_var.vhd
+    Info (12022): Found design unit 1: frec_var-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/frec_var.vhd Line: 9
+    Info (12023): Found entity 1: frec_var File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/frec_var.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file compara_prod.vhd
+    Info (12022): Found design unit 1: compara_prod-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/compara_prod.vhd Line: 9
+    Info (12023): Found entity 1: compara_prod File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/compara_prod.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ram512x5.vhd
+    Info (12022): Found design unit 1: ram512x5-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/ram512x5.vhd Line: 13
+    Info (12023): Found entity 1: ram512x5 File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/ram512x5.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file cont_dias.vhd
+    Info (12022): Found design unit 1: cont_dias-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_dias.vhd Line: 12
+    Info (12023): Found entity 1: cont_dias File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_dias.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file cont_updw.vhd
+    Info (12022): Found design unit 1: cont_updw-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_updw.vhd Line: 11
+    Info (12023): Found entity 1: cont_updw File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_updw.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file separador_3dig.vhd
+    Info (12022): Found design unit 1: separador_3dig-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/separador_3dig.vhd Line: 11
+    Info (12023): Found entity 1: separador_3dig File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/separador_3dig.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file selector_2a1.vhd
+    Info (12022): Found design unit 1: selector_2a1-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/selector_2a1.vhd Line: 12
+    Info (12023): Found entity 1: selector_2a1 File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/selector_2a1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file compara.vhd
+    Info (12022): Found design unit 1: compara-funcion File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/compara.vhd Line: 8
+    Info (12023): Found entity 1: compara File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/compara.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file controlador.vhd
+    Info (12022): Found design unit 1: controlador-Control File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/controlador.vhd Line: 11
+    Info (12023): Found entity 1: controlador File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/controlador.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file control_produccion_fpga.bdf
+    Info (12023): Found entity 1: CONTROL_PRODUCCION_FPGA
+Info (12127): Elaborating entity "CONTROL_PRODUCCION_SIMULAR" for the top level hierarchy
+Warning (275008): Primitive "OR2" of instance "inst13" not used
+Warning (275008): Primitive "AND2" of instance "inst24" not used
+Warning (275008): Primitive "AND2" of instance "inst26" not used
+Warning (275008): Primitive "NOT" of instance "inst32" not used
+Warning (275008): Primitive "AND2" of instance "inst33" not used
+Warning (275008): Primitive "AND2" of instance "inst34" not used
+Warning (275008): Primitive "AND2" of instance "inst35" not used
+Warning (275008): Primitive "AND2" of instance "inst36" not used
+Warning (275008): Primitive "OR2" of instance "inst49" not used
+Warning (275008): Primitive "AND2" of instance "inst53" not used
+Warning (275008): Primitive "AND2" of instance "inst54" not used
+Warning (275008): Primitive "AND2" of instance "inst55" not used
+Warning (275008): Primitive "AND2" of instance "inst57" not used
+Warning (275008): Primitive "NOT" of instance "inst58" not used
+Warning (275008): Primitive "AND2" of instance "inst59" not used
+Warning (275008): Primitive "AND2" of instance "inst7" not used
+Warning (275008): Primitive "OR2" of instance "inst8" not used
+Info (12128): Elaborating entity "ram512x5" for hierarchy "ram512x5:inst38"
+Info (12128): Elaborating entity "controlador" for hierarchy "controlador:inst63"
+Info (12128): Elaborating entity "capacidad_val" for hierarchy "capacidad_val:inst62"
+Info (12128): Elaborating entity "digitos" for hierarchy "digitos:inst"
+Info (12128): Elaborating entity "cont_productos" for hierarchy "cont_productos:inst14"
+Info (12128): Elaborating entity "frec_var" for hierarchy "frec_var:inst25"
+Info (12128): Elaborating entity "rsost_9b" for hierarchy "rsost_9b:inst12"
+Info (12128): Elaborating entity "cont_9b" for hierarchy "cont_9b:inst10"
+Info (12128): Elaborating entity "cont_dias" for hierarchy "cont_dias:inst37"
+Info (12128): Elaborating entity "compara" for hierarchy "compara:inst22"
+Info (12128): Elaborating entity "conta_pot2" for hierarchy "conta_pot2:inst42"
+Info (12128): Elaborating entity "selector_2a1" for hierarchy "selector_2a1:inst39"
+Info (12128): Elaborating entity "cont_updw" for hierarchy "cont_updw:inst40"
+Info (12128): Elaborating entity "deco_7seg" for hierarchy "deco_7seg:inst16"
+Info (12128): Elaborating entity "separador_3dig" for hierarchy "separador_3dig:inst27"
+Info (12128): Elaborating entity "valor_pwm" for hierarchy "valor_pwm:inst2"
+Info (12128): Elaborating entity "multiplex" for hierarchy "multiplex:inst21"
+Info (12128): Elaborating entity "compara_prod" for hierarchy "compara_prod:inst23"
+Info (12128): Elaborating entity "separador_3dig" for hierarchy "separador_3dig:inst28"
+Info (12128): Elaborating entity "div_frec" for hierarchy "div_frec:inst3"
+Info (12128): Elaborating entity "selector_2a1" for hierarchy "selector_2a1:inst31"
+Info (12128): Elaborating entity "pwm" for hierarchy "pwm:inst5"
+Info (12128): Elaborating entity "separador_3dig" for hierarchy "separador_3dig:inst61"
+Info (12128): Elaborating entity "decoder_teclado_ln" for hierarchy "decoder_teclado_ln:inst6"
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer frec_var:inst25|n[4]~0 File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/frec_var.vhd Line: 10
+    Warning (19017): Found clock multiplexer frec_var:inst25|n~1 File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/frec_var.vhd Line: 10
+    Warning (19017): Found clock multiplexer frec_var:inst25|n[2]~2 File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/frec_var.vhd Line: 10
+    Warning (19017): Found clock multiplexer frec_var:inst25|n~3 File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/frec_var.vhd Line: 10
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Sistemas/Desktop/CONTROL DE PRODUCCION/cont_productos.vhd Line: 18
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ok"
+    Warning (15610): No output dependent on input pin "CLK_1MHZ"
+Info (21057): Implemented 6745 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 30 output pins
+    Info (21061): Implemented 6703 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 4834 megabytes
+    Info: Processing ended: Tue Jan 23 14:42:37 2024
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:30
+
+

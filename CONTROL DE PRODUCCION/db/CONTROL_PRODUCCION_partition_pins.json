@@ -1,0 +1,169 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "dia_rep[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dia_rep[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dia_rep[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dia_rep[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dia_rep[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tasa_prod[6]",
+					"strict" : false
+				},
+				{
+					"name" : "tasa_prod[5]",
+					"strict" : false
+				},
+				{
+					"name" : "tasa_prod[4]",
+					"strict" : false
+				},
+				{
+					"name" : "tasa_prod[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tasa_prod[2]",
+					"strict" : false
+				},
+				{
+					"name" : "tasa_prod[1]",
+					"strict" : false
+				},
+				{
+					"name" : "tasa_prod[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_rep[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pro_real[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk_100hz",
+					"strict" : false
+				},
+				{
+					"name" : "mostrar",
+					"strict" : false
+				},
+				{
+					"name" : "bcd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bcd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "enter",
+					"strict" : false
+				},
+				{
+					"name" : "num",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

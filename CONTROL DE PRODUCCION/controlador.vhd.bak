@@ -1,0 +1,46 @@
+library ieee;
+use ieee.sTD_logic_1164.all;
+use ieee.sTD_logic_unsigned.all;
+
+EnTIty controlador is
+	Port(
+		 Reset, Clock, START, CAPACIDAD, FIN, NIVEL, LISTO, TIEMPO, FINAL_IMG, POSICION :	in std_logic;
+ 		 RES_REG, GIMG, IMG_I, DESPLAZA, MOSTRAR,INC,SEL,LED,RIMG5,RESPUNT  : out std_logic);
+end controlador;
+
+ArchiTEcture Control of controlador is
+	Type state is (TA, TB, TC, TD, TE, TF, TG, TH, TI, TJ, TK);
+	Signal y : state;
+Begin
+	Process(Reset, Clock)
+	Begin
+		If Reset = '1' THen y <= TA;
+		elsif Clock'event and Clock = '1' THen
+			case y is
+				when TA => IF FIN='1' THEN y <= TI; elsif INICIO='1' THEN y <= TB; ELSE y<=TA; end if;				
+				when TB => If NIVEL = '1' THen y <= TC; else  y <= TB; end if;	
+				when TC => If LISTO = '1'THen y<=TD; else  y <= TC; end if;
+				when TD => y<=TE;	
+				when TE => If FIN= '0' THen y <= TF; ELSE y<=TI; end if;
+  				when TF => If FINAL_IMG= '1' THen y <= TG; ELSIF TIEMPO = '1' THen y<=TK; ELSE y<=TF; end if;
+				when TK => y<=TD;				
+				when TG => If FIN= '1' THen y <= TI; ELSIF POSICION='1' THEN y<=TJ;else y<=TG; end if;
+				when TJ => y<=TH;
+				when TH => IF FIN='1' THEN y <= TI; elsif INICIO='1' THEN y <= TB; ELSE y<=TH; end if;
+				when TI => If INICIO = '1' THen y<=TB; else  y <= TI; end if;
+				when others => y <= TA;				
+			end case;
+		end if;
+	end Process;
+
+RES_REG<='1' WHEN (y=TA or y=TB) else '0';
+GIMG<='1' WHEN (y=TC and LISTO='1') else '0';
+IMG_I<='1' WHEN y=TD else '0';
+DESPLAZA<='1' WHEN (y=TE or y=TF) else '0';
+INC<='1' WHEN y=TK else '0';
+SEL<='1' WHEN (y=TG or y=TJ or y=TH) else '0';
+LED<='1' WHEN y=TH else '0';
+MOSTRAR<='1' WHEN y=TI else '0';
+RIMG5<='1' WHEN (y=TF and FINAL_IMG='1') else '0';
+RESPUNT<='1' WHEN (y=TI and INICIO = '1') else '0';
+End Control;

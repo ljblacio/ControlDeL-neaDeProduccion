@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+-- ENTIDAD
+entity separador_3dig is
+	generic(n: integer :=9);
+	port(numero: in std_logic_vector(n-1 downto 0);
+		  centena, decena, unidad: out integer range 0 to 15);
+end separador_3dig;
+-- ARQUITECTURA
+architecture funcion of separador_3dig is
+signal x,y,z: integer range 0 to 4095;
+begin
+x<=(conv_integer(numero)) / 10;
+y<= x/10;
+z<= y/10;
+unidad<= 48 + ((conv_integer(numero)) mod 10);-- EN ASCII HEXADECIMAL
+decena<= 48+(x mod 10) when (numero>9) else 32;-- EN ASCII HEXADECIMAL
+centena<= 48+(y mod 10) when (numero>99) else 32;-- EN ASCII HEXADECIMAL
+millar<= 48 + (z mod 10) when (numero>999) else 32;-- EN ASCII HEXADECIMAL
+end funcion;

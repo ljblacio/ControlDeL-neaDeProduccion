@@ -1,0 +1,9 @@
+-- VALOR PWM
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+-- ENTIDAD
+entity valor_pwm is
+	port(tproduc: in integer range 0 to 127;
+			vpwm: out integer range 0 to 255);
+end valor_pwm;

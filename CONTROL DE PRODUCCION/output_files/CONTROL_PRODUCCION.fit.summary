@@ -1,0 +1,18 @@
+Fitter Status : Successful - Tue Jan 23 14:45:10 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : CONTROL_PRODUCCION
+Top-level Entity Name : CONTROL_PRODUCCION_SIMULAR
+Family : MAX 10
+Device : 10M08DAF484C8G
+Timing Models : Final
+Total logic elements : 5,377 / 8,064 ( 67 % )
+    Total combinational functions : 4,630 / 8,064 ( 57 % )
+    Dedicated logic registers : 2,635 / 8,064 ( 33 % )
+Total registers : 2635
+Total pins : 42 / 250 ( 17 % )
+Total virtual pins : 0
+Total memory bits : 0 / 387,072 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 48 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 1 ( 0 % )
